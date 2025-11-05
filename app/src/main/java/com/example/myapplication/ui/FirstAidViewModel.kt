@@ -1,13 +1,19 @@
 package com.example.myapplication.ui
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.myapplication.data.FirstAidRepository
 import com.example.myapplication.data.FirstAidTopic
+import com.example.myapplication.data.FavoritesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.combine
+import kotlinx.coroutines.launch
 
-class FirstAidViewModel(private val repository: FirstAidRepository) : ViewModel() {
+class FirstAidViewModel(
+    private val repository: FirstAidRepository,
+    private val favoritesRepository: FavoritesRepository
+) : ViewModel() {
 
     private val _topics = MutableStateFlow<List<FirstAidTopic>>(emptyList())
     val topics: StateFlow<List<FirstAidTopic>> = _topics
@@ -19,8 +25,16 @@ class FirstAidViewModel(private val repository: FirstAidRepository) : ViewModel(
     val filteredTopics: StateFlow<List<FirstAidTopic>> = _filteredTopics
 
     init {
-        _topics.value = repository.getFirstAidTopics()
-        _filteredTopics.value = _topics.value
+        viewModelScope.launch {
+            val allTopics = repository.getFirstAidTopics()
+            favoritesRepository.getFavoriteTopicIds().collect { favoriteIds ->
+                val updatedTopics = allTopics.map { topic ->
+                    topic.copy(isFavorite = favoriteIds.contains(topic.id))
+                }
+                _topics.value = updatedTopics
+                _filteredTopics.value = updatedTopics
+            }
+        }
     }
 
     fun onSearchTextChanged(text: String) {
@@ -31,8 +45,9 @@ class FirstAidViewModel(private val repository: FirstAidRepository) : ViewModel(
     }
 
     fun toggleFavorite(topicId: String) {
-        val topic = _topics.value.find { it.id == topicId }?.apply { isFavorite = !isFavorite }
-        // This is a temporary implementation, in a real app you would persist this change
+        viewModelScope.launch {
+            favoritesRepository.toggleFavorite(topicId)
+        }
     }
 
     fun getFavorites(): List<FirstAidTopic> {
