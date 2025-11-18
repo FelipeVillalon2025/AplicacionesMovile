@@ -1,11 +1,15 @@
 package com.example.myapplication.data
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.*
+
 class FirstAidRepositoryImpl : FirstAidRepository {
     override fun getFirstAidTopics(): List<FirstAidTopic> {
         return listOf(
             FirstAidTopic(
-                title = "Accidente cerebrovascular (ictus)",
+                title = "ACV (Ictus)",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Psychology,
                 howToAct = listOf(
                     "Inicio súbito de debilidad en cara/miembro, alteración del habla, pérdida de visión o equilibrio.",
                     "Llamar emergencias y anotar hora de inicio de síntomas.",
@@ -16,8 +20,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Anafilaxia (reacción alérgica grave)",
+                title = "Anafilaxia",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Warning,
                 howToAct = listOf(
                     "Inicio rápido de hinchazón facial, dificultad respiratoria, urticaria, mareo o colapso.",
                     "Llamar a emergencias inmediatamente.",
@@ -31,6 +36,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
             FirstAidTopic(
                 title = "Electrocución",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Bolt,
                 howToAct = listOf(
                     "Cortar la corriente antes de tocar a la víctima.",
                     "Valorar respiración y RCP si necesario.",
@@ -42,25 +48,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Electrocución doméstica",
+                title = "Hemorragia Interna",
                 category = "Emergencias Graves",
-                howToAct = listOf(
-                    "Contracciones musculares, rigidez, pérdida de conciencia, quemaduras en los puntos de entrada/salida (manos, pies). Posibles arritmias o paro cardiorrespiratorio.",
-                    "Corta la corriente eléctrica antes de tocar a la víctima.",
-                    "Evalúa conciencia, respiración y pulso; si no respira, inicia RCP.",
-                    "Cubre las quemaduras con paño limpio húmedo.",
-                    "Mantén a la persona en reposo y abrígala.",
-                    "Traslada a un centro médico para observación, incluso si parece recuperarse."
-                ),
-                whatNotToDo = listOf(
-                    "No uses agua para apagar el fuego si hay corriente activa.",
-                    "No apliques pomadas ni revientes ampollas.",
-                    "No dejes sola a la persona tras la descarga."
-                )
-            ),
-            FirstAidTopic(
-                title = "Hemorragia interna sospechada",
-                category = "Emergencias Graves",
+                imageVector = Icons.Default.Bloodtype,
                 howToAct = listOf(
                     "Acostar y mantener inmóvil, cubrir con mantas.",
                     "No dar líquidos ni medicamentos por boca.",
@@ -71,8 +61,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Hemorragia por amputación parcial/total",
+                title = "Hemorragia Amputación",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Healing,
                 howToAct = listOf(
                     "Presionar y empaquetar la herida; si es arterial, torniquete proximal si no cede.",
                     "Conservar miembro amputado en bolsa estéril y sobre hielo (no directo).",
@@ -84,8 +75,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Hemorragia por varices o sangrado digestivo (sospecha)",
+                title = "Hemorragia Digestiva",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Bloodtype,
                 howToAct = listOf(
                     "Vómitos con sangre, heces negras, mareo, debilidad.",
                     "Acostar con piernas elevadas si no hay problema respiratorio.",
@@ -97,8 +89,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Infarto agudo de miocardio (sospecha)",
+                title = "Infarto (Corazón)",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.MonitorHeart,
                 howToAct = listOf(
                     "Dolor opresivo en pecho, sudor frío, náuseas, disnea, dolor irradiado a brazo o mandíbula.",
                     "Llamar emergencias y mantener al paciente en reposo semi-sentado.",
@@ -110,8 +103,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Intoxicación alimentaria (grave)",
+                title = "Intoxicación (Alimentos)",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Restaurant,
                 howToAct = listOf(
                     "Vómitos persistentes, diarrea, dolor abdominal intenso, deshidratación, sangre en heces en algunos casos.",
                     "Mantener hidratación con sorbos; conservar muestras de alimento si es posible.",
@@ -122,8 +116,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Intoxicación o envenenamiento (general)",
+                title = "Intoxicación (General)",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Science,
                 howToAct = listOf(
                     "Identificar sustancia y conservar envase.",
                     "Anotar hora aproximada e informar a emergencias o centro de intoxicaciones.",
@@ -134,8 +129,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Intoxicación por monóxido de carbono (CO)",
+                title = "Intoxicación (CO)",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Cloud,
                 howToAct = listOf(
                     "Cefalea, mareo, náuseas, confusión, pérdida de conciencia; síntomas similares a gripe en exposición leve.",
                     "Sacar a la persona a aire fresco; ventilar el espacio.",
@@ -146,8 +142,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Lesión por proyectil (arma de fuego) - manejo inicial",
+                title = "Herida de Bala",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Healing,
                 howToAct = listOf(
                     "Orificio de entrada (y posible salida), sangrado, shock, heridas internas.",
                     "Controlar sangrado con presión directa y empaquetamiento si es necesario.",
@@ -158,8 +155,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Paro cardiorrespiratorio",
+                title = "Paro Cardíaco",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.MonitorHeart,
                 howToAct = listOf(
                     "Llamar a emergencias.",
                     "Iniciar compresiones torácicas 100–120/min hasta ayuda."
@@ -169,8 +167,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Shock (estado de baja perfusión)",
+                title = "Estado de Shock",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.FlashOn,
                 howToAct = listOf(
                     "Piel pálida, fría y húmeda, pulso débil y rápido, confusión, respiración rápida.",
                     "Acostar y elevar piernas si no hay lesión que lo impida; cubrir con manta.",
@@ -182,8 +181,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Sospecha de sepsis",
+                title = "Sospecha de Sepsis",
                 category = "Emergencias Graves",
+                imageVector = Icons.Default.Coronavirus,
                 howToAct = listOf(
                     "Fiebre o hipotermia, taquicardia, respiración rápida, confusión, antecedente de infección.",
                     "Llamar emergencias y trasladar; mantener al paciente abrigado.",
@@ -196,6 +196,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
             FirstAidTopic(
                 title = "Ahogamiento",
                 category = "Emergencias Respiratorias",
+                imageVector = Icons.Default.Water,
                 howToAct = listOf(
                     "Sacar del agua, comprobar respiración y pulso.",
                     "Iniciar RCP si no respira; colocar de lado si recupera y vigilar."
@@ -205,36 +206,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Asfixia por inmersión (ahogamiento)",
+                title = "Atragantamiento",
                 category = "Emergencias Respiratorias",
-                howToAct = listOf(
-                    "Dificultad respiratoria o ausencia de respiración, tos, piel azulada, espuma en boca o nariz, pérdida de conciencia.",
-                    "Retira del agua con cuidado, manteniendo cabeza y cuello alineados.",
-                    "Evalúa respiración y pulso: si no respira, inicia RCP (30 compresiones y 2 ventilaciones).",
-                    "Si respira, colócalo de lado (posición lateral de seguridad) y abrígalo.",
-                    "Retira ropa mojada, seca suavemente y cúbrelo con mantas.",
-                    "Traslado inmediato al hospital, aunque recupere la conciencia (puede haber daño pulmonar secundario)."
-                ),
-                whatNotToDo = listOf(
-                    "No intentes “sacarle el agua” poniéndolo boca abajo.",
-                    "No retrases la llamada a emergencias.",
-                    "No administres líquidos ni alimentos después del rescate."
-                )
-            ),
-            FirstAidTopic(
-                title = "Atragantamiento (asfixia leve)",
-                category = "Emergencias Respiratorias",
-                howToAct = listOf(
-                    "Si la persona tose, animarla a toser con fuerza.",
-                    "Si no respira, maniobra de Heimlich; en bebés 5 golpes en espalda + 5 compresiones torácicas."
-                ),
-                whatNotToDo = listOf(
-                    "No introducir dedos si no se visualiza el objeto."
-                )
-            ),
-            FirstAidTopic(
-                title = "Atragantamiento (obstrucción parcial o completa)",
-                category = "Emergencias Respiratorias",
+                imageVector = Icons.Default.Restaurant,
                 howToAct = listOf(
                     "Tos intensa, imposibilidad de hablar o respirar, rostro enrojecido o azulado. En bebés, llanto débil o silencioso, incapacidad de emitir sonidos, posible pérdida de conciencia.",
                     "Si puede toser o hablar, anímalo a seguir tosiendo.",
@@ -251,8 +225,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Crisis asmática grave",
+                title = "Crisis Asmática",
                 category = "Emergencias Respiratorias",
+                imageVector = Icons.Default.Air,
                 howToAct = listOf(
                     "Dificultad respiratoria, sibilancias (silbido al respirar), ansiedad, labios azulados, habla entrecortada, uso visible de músculos accesorios.",
                     "Coloca al paciente sentado e inclinado ligeramente hacia adelante.",
@@ -268,8 +243,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Inhalación de gases industriales (cloro, amoníaco)",
+                title = "Inhalación de Gases",
                 category = "Emergencias Respiratorias",
+                imageVector = Icons.Default.GasMeter,
                 howToAct = listOf(
                     "Irritación ocular, tos intensa, quemazón en vías aéreas, sibilancias.",
                     "Sacar a aire fresco, enjuagar ojos con agua si procede.",
@@ -280,8 +256,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Inhalación de humo (por incendio)",
+                title = "Inhalación de Humo",
                 category = "Emergencias Respiratorias",
+                imageVector = Icons.Default.Fireplace,
                 howToAct = listOf(
                     "Tos persistente, quemazón en garganta, disnea, voz ronca, presencia de hollín en boca/nariz.",
                     "Sacar a la persona a aire libre y ventilar.",
@@ -293,24 +270,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Inhalación de humo de combustión o cigarrillos",
-                category = "Emergencias Respiratorias",
-                howToAct = listOf(
-                    "Tos persistente, ardor de garganta, irritación ocular, dolor torácico, dificultad respiratoria, mareos o náuseas.",
-                    "Sal del área contaminada y busca aire fresco.",
-                    "Si persiste la tos o hay dificultad para respirar, acude a un centro médico.",
-                    "Bebe agua para aliviar garganta y evita exposición adicional.",
-                    "Si hubo exposición prolongada o signos de intoxicación por monóxido, requiere oxigenoterapia."
-                ),
-                whatNotToDo = listOf(
-                    "No permanezcas en ambientes con humo.",
-                    "No ignores tos o ardor prolongado.",
-                    "No fumes tras el incidente."
-                )
-            ),
-            FirstAidTopic(
-                title = "Corte leve",
+                title = "Corte Leve",
                 category = "Heridas Comunes",
+                imageVector = Icons.Default.Healing,
                 howToAct = listOf(
                     "Lava con abundante agua y jabón neutro.",
                     "Aplica presión con gasa limpia hasta detener el sangrado.",
@@ -324,8 +286,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Hemorragia abundante",
+                title = "Hemorragia Abundante",
                 category = "Heridas Comunes",
+                imageVector = Icons.Default.Bloodtype,
                 howToAct = listOf(
                     "Presión firme y constante sobre la herida.",
                     "Empaqueta la herida si hay cavidad.",
@@ -338,47 +301,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Hemorragia leve",
+                title = "Herida Profunda",
                 category = "Heridas Comunes",
-                howToAct = listOf(
-                    "Presión directa con gasa limpia durante 10 minutos.",
-                    "Eleva la extremidad si procede.",
-                    "Coloca apósito y vigila."
-                ),
-                whatNotToDo = listOf(
-                    "No retires la gasa si está empapada; coloca otra encima.",
-                    "No uses algodón."
-                )
-            ),
-            FirstAidTopic(
-                title = "Hemorragia nasal abundante (trauma o hipertensión)",
-                category = "Heridas Comunes",
-                howToAct = listOf(
-                    "Sentar con cabeza hacia adelante y presionar la parte blanda de la nariz por 20 minutos.",
-                    "Aplicar frío en la nariz y nuca.",
-                    "Si persiste, acudir a urgencias para control especializado."
-                ),
-                whatNotToDo = listOf(
-                    "No acostar ni inclinar la cabeza hacia atrás.",
-                    "No intentar taponar profundamente sin formación."
-                )
-            ),
-            FirstAidTopic(
-                title = "Hemorragia nasal leve (por calor, resequedad o esfuerzo)",
-                category = "Heridas Comunes",
-                howToAct = listOf(
-                    "Sentarse, inclinar la cabeza ligeramente hacia adelante.",
-                    "Presionar la parte blanda de la nariz por 10–15 minutos.",
-                    "Aplicar compresa fría en la nuca."
-                ),
-                whatNotToDo = listOf(
-                    "No inclinar la cabeza hacia atrás.",
-                    "No introducir algodón ni sonarse con fuerza."
-                )
-            ),
-            FirstAidTopic(
-                title = "Herida profunda o punzante",
-                category = "Heridas Comunes",
+                imageVector = Icons.Default.Healing,
                 howToAct = listOf(
                     "No retires el objeto si está incrustado; inmoviliza y fija alrededor con gasas.",
                     "Aplica presión alrededor de la herida para controlar el sangrado.",
@@ -390,8 +315,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Quemadura grave",
+                title = "Quemadura Grave",
                 category = "Heridas Comunes",
+                imageVector = Icons.Default.LocalFireDepartment,
                 howToAct = listOf(
                     "Enfría con agua tibia, no hielo.",
                     "Cubre con paño húmedo limpio y no retires ropa adherida.",
@@ -403,8 +329,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Quemadura leve",
+                title = "Quemadura Leve",
                 category = "Heridas Comunes",
+                imageVector = Icons.Default.LocalFireDepartment,
                 howToAct = listOf(
                     "Enfría con agua a temperatura ambiente 10–15 minutos.",
                     "Cubre con gasa húmeda limpia para evitar adherencia.",
@@ -416,8 +343,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Quemadura por electricidad (internas)",
+                title = "Quemadura Eléctrica",
                 category = "Heridas Comunes",
+                imageVector = Icons.Default.Bolt,
                 howToAct = listOf(
                     "Puntos de entrada/salida, quemaduras superficiales y posibles lesiones internas, arritmias, pérdida de conciencia.",
                     "Cortar la fuente eléctrica antes de auxiliar.",
@@ -429,8 +357,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Quemadura por productos químicos (ácidos/álcalis)",
+                title = "Quemadura Química",
                 category = "Heridas Comunes",
+                imageVector = Icons.Default.Science,
                 howToAct = listOf(
                     "Retirar la ropa contaminada y enjuagar con abundante agua por 20 minutos.",
                     "Si es polvo, eliminar primero sin agua.",
@@ -441,18 +370,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Mordedura de gato",
+                title = "Mordedura de Animal",
                 category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Lavar y no cerrar la herida herméticamente; acudir a médico para antibióticos."
-                ),
-                whatNotToDo = listOf(
-                    "No aplicar alcohol directo."
-                )
-            ),
-            FirstAidTopic(
-                title = "Mordedura de perro",
-                category = "Mordeduras y Picaduras",
+                imageVector = Icons.Default.Pets,
                 howToAct = listOf(
                     "Lavar con abundante agua y jabón.",
                     "Presionar si sangra, cubrir con gasa limpia y acudir a urgencias para profilaxis."
@@ -462,18 +382,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Mordedura de roedor",
+                title = "Mordedura de Serpiente",
                 category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Lavar con agua y jabón, cubrir y consultar por profilaxis antibiótica."
-                ),
-                whatNotToDo = listOf(
-                    "No ignores ni tapes herméticamente."
-                )
-            ),
-            FirstAidTopic(
-                title = "Mordedura de serpiente (venenosa sospechada)",
-                category = "Mordeduras y Picaduras",
+                imageVector = Icons.Filled.PestControl,
                 howToAct = listOf(
                     "Mantener a la persona inmóvil y la extremidad a nivel o debajo del corazón.",
                     "Retirar objetos ajustados; llamar al 131 y anotar la hora.",
@@ -484,19 +395,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Mordedura humana",
+                title = "Picadura de Insecto",
                 category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Herida con riesgo de infección por flora oral humana, dolor e inflamación.",
-                    "Lavar abundantemente y buscar atención médica para antibióticos."
-                ),
-                whatNotToDo = listOf(
-                    "No pasar por alto; no cerrar sin valoración."
-                )
-            ),
-            FirstAidTopic(
-                title = "Picadura de abeja",
-                category = "Mordeduras y Picaduras",
+                imageVector = Icons.Default.BugReport,
                 howToAct = listOf(
                     "Retirar aguijón raspando con borde rígido.",
                     "Lavar y aplicar compresa fría 10–15 min.",
@@ -507,8 +408,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Picadura de araña (rincón/viuda)",
+                title = "Picadura de Araña",
                 category = "Mordeduras y Picaduras",
+                imageVector = Icons.Default.BugReport,
                 howToAct = listOf(
                     "Lavar y aplicar compresa fría.",
                     "Immovilizar y acudir a urgencias; identificar la araña si es seguro."
@@ -518,41 +420,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Picadura de avispa/abejorro",
+                title = "Picadura de Medusa",
                 category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Lavar y aplicar frío local.",
-                    "Elevar la extremidad si procede; antihistamínico si está indicado."
-                ),
-                whatNotToDo = listOf(
-                    "No rascar ni aplicar vinagre o limón."
-                )
-            ),
-            FirstAidTopic(
-                title = "Picadura de escorpión",
-                category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Dolor local intenso, posible sudoración, náuseas, en niños riesgo de convulsiones.",
-                    "Lavar y aplicar frío local; trasladar para antídoto si necesario."
-                ),
-                whatNotToDo = listOf(
-                    "No cortar ni chupar la herida."
-                )
-            ),
-            FirstAidTopic(
-                title = "Picadura de garrapata",
-                category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Extraer con pinza lo más cerca posible de la piel tirando recto.",
-                    "Lavar y desinfectar; marcar la zona y vigilar por erupciones."
-                ),
-                whatNotToDo = listOf(
-                    "No quemar ni usar aceite para quitarla."
-                )
-            ),
-            FirstAidTopic(
-                title = "Picadura de medusa",
-                category = "Mordeduras y Picaduras",
+                imageVector = Icons.Default.Waves,
                 howToAct = listOf(
                     "Retirar tentáculos con pinzas; lavar con agua salada.",
                     "Aplicar calor moderado (38–45 °C) para aliviar dolor.",
@@ -563,41 +433,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Picadura de mosquito",
-                category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Lavar y aplicar frío local o loción calmante.",
-                    "Evitar rascarse."
-                ),
-                whatNotToDo = listOf(
-                    "No rascar ni aplicar productos caseros irritantes."
-                )
-            ),
-            FirstAidTopic(
-                title = "Picadura de pulga o chinche",
-                category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Pequeñas pápulas pruriginosas agrupadas, localizadas en piernas o cintura.",
-                    "Lavar y aplicar loción calmante; limpiar ropa de cama."
-                ),
-                whatNotToDo = listOf(
-                    "No rascar para evitar infección."
-                )
-            ),
-            FirstAidTopic(
-                title = "Picadura de tábano",
-                category = "Mordeduras y Picaduras",
-                howToAct = listOf(
-                    "Dolor e inflamación marcada, riesgo de infección.",
-                    "Lavar y aplicar frío; si supura, consultar."
-                ),
-                whatNotToDo = listOf(
-                    "No rascar ni aplicar calor."
-                )
-            ),
-            FirstAidTopic(
-                title = "Golpe de calor (insolación severa)",
+                title = "Golpe de Calor",
                 category = "Problemas Ambientales",
+                imageVector = Icons.Default.Thermostat,
                 howToAct = listOf(
                     "Piel caliente, seca y enrojecida, mareos, dolor de cabeza, confusión, convulsiones, temperatura corporal superior a 40 °C.",
                     "Traslada a un lugar fresco y sombreado.",
@@ -613,8 +451,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Hipotermia severa",
+                title = "Hipotermia",
                 category = "Problemas Ambientales",
+                imageVector = Icons.Default.AcUnit,
                 howToAct = listOf(
                     "Escalofríos intensos, torpeza, dificultad para hablar, piel fría y pálida, confusión, somnolencia, pulso débil o irregular.",
                     "Traslada a un lugar seco y cálido.",
@@ -630,8 +469,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Fiebre alta en niños",
+                title = "Fiebre Alta (Niños)",
                 category = "Problemas Comunes en Niños",
+                imageVector = Icons.Default.Thermostat,
                 howToAct = listOf(
                     "Temperatura corporal superior a 38,5 °C, irritabilidad, somnolencia, llanto inconsolable, respiración rápida, escalofríos.",
                     "Retira el exceso de ropa y mantén el ambiente ventilado.",
@@ -647,24 +487,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Ataque de pánico / crisis de ansiedad",
+                title = "Convulsiones",
                 category = "Problemas de Conciencia",
-                howToAct = listOf(
-                    "Palpitaciones, sensación de falta de aire, temblores, miedo intenso, mareo, sudor frío, sensación de pérdida de control o muerte inminente.",
-                    "Habla con voz calmada y asegúrale que no corre peligro.",
-                    "Guíalo para respirar: inhalar 4 s, mantener 2 s, exhalar 6 s.",
-                    "Acompáñalo a un lugar tranquilo y ventilado.",
-                    "Permanece con la persona hasta que se calme o llegue ayuda profesional."
-                ),
-                whatNotToDo = listOf(
-                    "No minimizar los síntomas ni decir “cálmate”.",
-                    "No la dejes sola si presenta hiperventilación intensa.",
-                    "No administres medicamentos sin prescripción."
-                )
-            ),
-            FirstAidTopic(
-                title = "Convulsiones (epilépticas o febriles)",
-                category = "Problemas de Conciencia",
+                imageVector = Icons.Default.Psychology,
                 howToAct = listOf(
                     "Pérdida de conciencia, rigidez muscular seguida de movimientos espasmódicos, mordedura de lengua, respiración irregular. En niños con fiebre, suelen ser breves y autolimitadas.",
                     "Mantén la calma y coloca al paciente lejos de objetos duros o peligrosos.",
@@ -683,6 +508,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
             FirstAidTopic(
                 title = "Desmayo",
                 category = "Problemas de Conciencia",
+                imageVector = Icons.Default.AirlineStops,
                 howToAct = listOf(
                     "Acostar boca arriba y elevar piernas ~30 cm.",
                     "Aflojar ropa ajustada y ventilar el lugar.",
@@ -694,8 +520,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Hipoglucemia (baja de azúcar)",
+                title = "Hipoglucemia",
                 category = "Problemas de Conciencia",
+                imageVector = Icons.Default.Bloodtype,
                 howToAct = listOf(
                     "Sudor frío, temblores, palidez, irritabilidad, visión borrosa, confusión, debilidad. En casos graves, pérdida de conciencia.",
                     "Si está consciente, administra 15 g de glucosa (una bebida azucarada o tres cucharaditas de azúcar disueltas en agua).",
@@ -710,8 +537,9 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Contusión o hematoma severo con riesgo de síndrome compartimental",
+                title = "Contusión Grave",
                 category = "Traumatismos y Lesiones",
+                imageVector = Icons.Default.PersonalInjury,
                 howToAct = listOf(
                     "Dolor intenso, hinchazón marcada, pérdida de sensibilidad o movilidad distal.",
                     "Elevar la extremidad y aplicar frío.",
@@ -724,6 +552,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
             FirstAidTopic(
                 title = "Esguince",
                 category = "Traumatismos y Lesiones",
+                imageVector = Icons.Default.PersonalInjury,
                 howToAct = listOf(
                     "RICE: reposo, hielo envuelto, compresión ligera, elevación.",
                     "Evitar apoyo hasta valoración."
@@ -735,6 +564,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
             FirstAidTopic(
                 title = "Fractura",
                 category = "Traumatismos y Lesiones",
+                imageVector = Icons.Default.PersonalInjury,
                 howToAct = listOf(
                     "Inmoviliza como se encuentra con tablillas o palos acolchados.",
                     "Si hay herida abierta, cubre con paño húmedo sobre zona expuesta antes de entablillar.",
@@ -746,38 +576,15 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 )
             ),
             FirstAidTopic(
-                title = "Fractura de pelvis o sospecha de lesión interna mayor",
-                category = "Traumatismos y Lesiones",
-                howToAct = listOf(
-                    "Dolor pélvico intenso, incapacidad para moverse, hipotensión o signos de shock tras accidente.",
-                    "No mover innecesariamente; inmovilizar y mantener caliente.",
-                    "Llamar a emergencias y preparar traslado especializado."
-                ),
-                whatNotToDo = listOf(
-                    "No intentar mover al paciente sin soporte."
-                )
-            ),
-            FirstAidTopic(
                 title = "Luxación",
                 category = "Traumatismos y Lesiones",
+                imageVector = Icons.Default.PersonalInjury,
                 howToAct = listOf(
                     "Inmoviliza la articulación en la posición encontrada.",
                     "Aplica frío local y acude a urgencias."
                 ),
                 whatNotToDo = listOf(
                     "No intentes recolocar la articulación."
-                )
-            ),
-            FirstAidTopic(
-                title = "Traumatismo por caída desde altura",
-                category = "Traumatismos y Lesiones",
-                howToAct = listOf(
-                    "Dolor en múltiples zonas, incapacidad para moverse, posible fractura o lesión medular.",
-                    "No mover al paciente salvo peligro; inmovilizar cabeza y columna.",
-                    "Llamar emergencias y monitorizar vías aéreas."
-                ),
-                whatNotToDo = listOf(
-                    "No intentar sentar o levantar."
                 )
             )
         ).sortedBy { it.category }.sortedBy { it.title }

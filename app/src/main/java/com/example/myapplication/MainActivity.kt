@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.activity.viewModels
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
@@ -18,8 +17,6 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -38,6 +35,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.LineBreak
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
@@ -126,13 +124,26 @@ fun MyBottomNavBar(navController: NavHostController) {
 @Composable
 fun HomeScreen(viewModel: FirstAidViewModel, navController: NavHostController) {
     val topics by viewModel.topics.collectAsState()
-    val groupedTopics = topics.groupBy { it.category }.toSortedMap()
+
+    val severityOrder = mapOf(
+        "Emergencias Graves" to 1,
+        "Traumatismos y Lesiones" to 1,
+        "Emergencias Respiratorias" to 2,
+        "Problemas de Conciencia" to 2,
+        "Problemas Ambientales" to 2,
+        "Mordeduras y Picaduras" to 3,
+        "Heridas Comunes" to 4,
+        "Problemas Comunes en Niños" to 5
+    )
+
+    val groupedTopics = topics.groupBy { it.category }
+    val sortedGroupedTopics = groupedTopics.toSortedMap(compareBy<String> { severityOrder[it] ?: 6 }.thenBy { it })
 
     LazyVerticalGrid(
         columns = GridCells.Fixed(3),
         modifier = Modifier.padding(4.dp)
     ) {
-        groupedTopics.forEach { (category, topics) ->
+        sortedGroupedTopics.forEach { (category, topics) ->
             item(span = { GridItemSpan(maxLineSpan) }) {
                 Text(
                     text = category,
@@ -166,21 +177,23 @@ fun TopicItem(topic: FirstAidTopic, viewModel: FirstAidViewModel, navController:
             verticalArrangement = Arrangement.SpaceAround
         ) {
             Icon(
-                imageVector = Icons.Filled.Add,
-                contentDescription = "Primeros auxilios",
+                imageVector = topic.imageVector,
+                contentDescription = topic.title,
                 tint = Color.White,
                 modifier = Modifier
                     .size(40.dp)
             )
+
             Text(
                 text = topic.title,
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    lineBreak = LineBreak.Heading
+                ),
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
                 color = Color.White,
-                modifier = Modifier
-                    .fillMaxWidth(),
-                maxLines = 2
+                modifier = Modifier.fillMaxWidth(),
+                maxLines = 3
             )
         }
     }
