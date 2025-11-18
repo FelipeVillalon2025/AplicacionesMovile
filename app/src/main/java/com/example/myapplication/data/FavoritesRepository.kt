@@ -15,11 +15,10 @@ class FavoritesRepository(private val context: Context) {
 
     private val favoritesKey = stringSetPreferencesKey("favorite_topics")
 
-    fun getFavoriteTopicIds(): Flow<Set<String>> {
-        return context.dataStore.data.map {
+    val favoriteTopicIds: Flow<Set<String>> = context.dataStore.data
+        .map {
             it[favoritesKey] ?: emptySet()
         }
-    }
 
     suspend fun toggleFavorite(topicId: String) {
         context.dataStore.edit { preferences ->

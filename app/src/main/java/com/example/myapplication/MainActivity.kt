@@ -60,7 +60,7 @@ import com.example.myapplication.ui.theme.MyApplicationTheme
 class MainActivity : ComponentActivity() {
 
     private val viewModel: FirstAidViewModel by viewModels {
-        FirstAidViewModelFactory(FirstAidRepositoryImpl(), FavoritesRepository(this))
+        FirstAidViewModelFactory(FirstAidRepositoryImpl(), FavoritesRepository(applicationContext))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -86,8 +86,9 @@ class MainActivity : ComponentActivity() {
                             route = Screen.TopicDetail.route,
                             arguments = listOf(navArgument("topicId") { type = NavType.StringType })
                         ) { backStackEntry ->
+                            val topics by viewModel.topics.collectAsState()
                             val topicId = backStackEntry.arguments?.getString("topicId")
-                            val topic = viewModel.topics.value.find { it.id == topicId }
+                            val topic = topics.find { it.id == topicId }
                             if (topic != null) {
                                 TopicDetailScreen(topic = topic, viewModel = viewModel)
                             }
