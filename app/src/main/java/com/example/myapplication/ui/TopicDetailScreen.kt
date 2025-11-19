@@ -1,10 +1,7 @@
 package com.example.myapplication.ui
 
 import android.annotation.SuppressLint
-import android.view.View
-import android.webkit.WebChromeClient
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.widget.FrameLayout
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Column
@@ -31,10 +28,14 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.example.myapplication.data.FirstAidTopic
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
@@ -75,28 +76,37 @@ fun TopicDetailScreen(topic: FirstAidTopic, viewModel: FirstAidViewModel) {
                     Text("Ver video")
                 }
             } else {
-                val embedUrl = "https://www.youtube.com/embed/$videoId"
-                
+                val lifecycleOwner = LocalLifecycleOwner.current
+
                 AndroidView(
                     modifier = Modifier
                         .fillMaxWidth()
                         .aspectRatio(16f / 9f),
                     factory = { context ->
-                        WebView(context).apply {
-                            settings.javaScriptEnabled = true
-                            settings.domStorageEnabled = true
-                            webViewClient = WebViewClient()
-                            webChromeClient = WebChromeClient()
-                            setLayerType(View.LAYER_TYPE_SOFTWARE, null)
-                            loadUrl(embedUrl)
+                        FrameLayout(context).apply {
+                            val playerView = YouTubePlayerView(context).apply {
+                                lifecycleOwner.lifecycle.addObserver(this)
+                                addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
+                                    override fun onReady(youTubePlayer: YouTubePlayer) {
+                                        youTubePlayer.loadVideo(videoId, 0f)
+                                    }
+                                })
+                            }
+                            addView(
+                                playerView,
+                                FrameLayout.LayoutParams(
+                                    FrameLayout.LayoutParams.MATCH_PARENT,
+                                    FrameLayout.LayoutParams.MATCH_PARENT
+                                )
+                            )
                         }
                     }
                 )
             }
         }
 
-        IconButton(onClick = { 
-            viewModel.toggleFavorite(topic.id) 
+        IconButton(onClick = {
+            viewModel.toggleFavorite(topic.id)
         }) {
             Icon(
                 imageVector = if (topic.isFavorite) Icons.Filled.Favorite else Icons.Filled.FavoriteBorder,
