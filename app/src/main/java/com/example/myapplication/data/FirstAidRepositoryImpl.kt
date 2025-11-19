@@ -177,7 +177,8 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 ),
                 whatNotToDo = listOf(
                     "No detener compresiones hasta relevo."
-                )
+                ),
+                videoId = "_tEaPq0f-3E"
             ),
             FirstAidTopic(
                 id = "Atragantamiento",
@@ -197,7 +198,8 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No introduzcas los dedos en la boca si no ves el objeto.",
                     "No sacudas ni golpees violentamente al niño.",
                     "No des agua ni alimentos inmediatamente después del episodio."
-                )
+                ),
+                videoId = "gpytqz340m4"
             ),
             FirstAidTopic(
                 id = "Ahogamiento",

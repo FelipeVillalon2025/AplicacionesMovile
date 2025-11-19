@@ -10,5 +10,6 @@ data class FirstAidTopic(
     val symptoms: List<String>,
     val howToAct: List<String>,
     val whatNotToDo: List<String>,
+    val videoId: String? = null,
     var isFavorite: Boolean = false
 )
