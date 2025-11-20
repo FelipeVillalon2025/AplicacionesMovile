@@ -1,5 +1,6 @@
 package com.example.myapplication.data
 
+import androidx.annotation.DrawableRes
 import androidx.compose.ui.graphics.vector.ImageVector
 
 data class FirstAidTopic(
@@ -10,6 +11,6 @@ data class FirstAidTopic(
     val symptoms: List<String>,
     val howToAct: List<String>,
     val whatNotToDo: List<String>,
-    val videoId: String? = null,
+    @DrawableRes val procedureImage: Int? = null,
     var isFavorite: Boolean = false
 )

@@ -14,17 +14,16 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class FirstAidViewModel(
-    repository: FirstAidRepository,
+    private val repository: FirstAidRepository,
     private val favoritesRepository: FavoritesRepository
 ) : ViewModel() {
 
     private val _searchText = MutableStateFlow("")
     val searchText: StateFlow<String> = _searchText
 
-    private val allTopics = repository.getFirstAidTopics()
-
     val topics: StateFlow<List<FirstAidTopic>> = favoritesRepository.favoriteTopicIds
         .map { favoriteIds ->
+            val allTopics = repository.getFirstAidTopics()
             allTopics.map { topic ->
                 topic.copy(isFavorite = favoriteIds.contains(topic.id))
             }
