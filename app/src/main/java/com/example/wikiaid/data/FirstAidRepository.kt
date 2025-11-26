@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.wikiaid.data
 
 interface FirstAidRepository {
     fun getFirstAidTopics(): List<FirstAidTopic>

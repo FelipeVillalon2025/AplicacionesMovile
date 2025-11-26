@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.theme
+package com.example.wikiaid.ui.theme
 
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
@@ -10,7 +10,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun MyApplicationTheme(
+fun WikiAidTheme(
     content: @Composable () -> Unit
 ) {
     MaterialTheme(
