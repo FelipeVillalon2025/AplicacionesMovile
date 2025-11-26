@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.wikiaid
 
 import android.content.Intent
 import android.net.Uri
@@ -57,12 +57,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.myapplication.data.FavoritesRepository
-import com.example.myapplication.data.FirstAidRepositoryImpl
-import com.example.myapplication.data.FirstAidTopic
-import com.example.myapplication.ui.FirstAidViewModel
-import com.example.myapplication.ui.FirstAidViewModelFactory
-import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.example.wikiaid.data.FavoritesRepository
+import com.example.wikiaid.data.FirstAidRepositoryImpl
+import com.example.wikiaid.data.FirstAidTopic
+import com.example.wikiaid.ui.FirstAidViewModel
+import com.example.wikiaid.ui.FirstAidViewModelFactory
+import com.example.wikiaid.ui.theme.WikiAidTheme
 
 sealed class BottomNavItem(val route: String, val icon: ImageVector, val title: String) {
     object Home : BottomNavItem("home", Icons.Default.Home, "Inicio")
@@ -73,7 +73,7 @@ sealed class BottomNavItem(val route: String, val icon: ImageVector, val title: 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        setTheme(R.style.Theme_MyApplication)
+        setTheme(R.style.Theme_WikiAid)
         super.onCreate(savedInstanceState)
 
         val favoritesRepository = FavoritesRepository(this)
@@ -81,7 +81,7 @@ class MainActivity : ComponentActivity() {
         val viewModel = ViewModelProvider(this, viewModelFactory).get(FirstAidViewModel::class.java)
 
         setContent {
-            MyApplicationTheme {
+            WikiAidTheme {
                 MainScreen(viewModel = viewModel)
             }
         }
@@ -96,7 +96,7 @@ fun MainScreen(viewModel: FirstAidViewModel) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Primeros Auxilios App") }
+                title = { Text("WikiAid") }
             )
         },
         bottomBar = {
@@ -167,7 +167,7 @@ fun AppNavigation(navController: NavHostController, viewModel: FirstAidViewModel
             val topics by viewModel.topics.collectAsState()
             val topic = topics.find { it.id == topicId }
             if (topic != null) {
-                com.example.myapplication.ui.TopicDetailScreen(topic = topic, viewModel = viewModel)
+                com.example.wikiaid.ui.TopicDetailScreen(topic = topic, viewModel = viewModel)
             }
         }
     }

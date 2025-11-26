@@ -1,6 +1,6 @@
-package com.example.myapplication.data
+package com.example.wikiaid.data
 
-import com.example.myapplication.R
+import com.example.wikiaid.R
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.*
 
@@ -433,7 +433,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No permitir deporte el mismo día.",
                     "No usar alcohol ni fármacos sedantes."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.golpeleve
             ),
             FirstAidTopic(
                 id = "Traumatismo craneal moderado",
@@ -461,7 +461,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No mover cabeza ni cuello.",
                     "No permitir que se duerma si está muy confundido o vomita."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.traumatismocraneal
             ),
             FirstAidTopic(
                 id = "Conmoción cerebral",
@@ -474,7 +474,8 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "Mareo, visión borrosa.",
                     "Inestabilidad o problemas de equilibrio.",
                     "Alteración del habla o lentitud.",
-                    "Hipersensibilidad al ruido o luz."
+                    "Hipersensibilidad al ruido o luz.",
+                    "Pérdida de memoria de los eventos antes o después de la lesión."
                 ),
                 howToAct = listOf(
                     "Reposo total durante 24–48 h.",
@@ -488,7 +489,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No administrar ibuprofeno las primeras horas.",
                     "No dejar solo por 24 h."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.concussion
             ),
             FirstAidTopic(
                 id = "Hematoma",
@@ -513,7 +514,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar calor en primeras 48 h.",
                     "No masajear fuerte."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hematoma
             ),
             FirstAidTopic(
                 id = "Hematoma extenso / sospecha de daño interno",
@@ -540,7 +541,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar calor.",
                     "No ignorar si el hematoma crece rápidamente."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hematomaextenso
             ),
             FirstAidTopic(
                 id = "Herida punzante",
@@ -568,7 +569,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar alcohol dentro de la herida.",
                     "No dejar la herida sin cubrir si fue profunda."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.punzante
             ),
             FirstAidTopic(
                 id = "Herida con cuerpo extraño",
@@ -595,7 +596,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No cortar el objeto salvo que impida traslado (y solo si es seguro).",
                     "No aplicar agua a presión."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hcuerpoex
             ),
             FirstAidTopic(
                 id = "Amputación",
@@ -623,7 +624,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No dejarla en el suelo o sin limpieza.",
                     "No retirar el torniquete una vez colocado."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.amputacion
             ),
             FirstAidTopic(
                 id = "Hemorragia nasal (epistaxis)",
@@ -648,7 +649,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No sonarse la nariz después del sangrado.",
                     "No introducir algodón profundo."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hnasal
             ),
             FirstAidTopic(
                 id = "Golpe en la nariz",
@@ -674,7 +675,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No intentar enderezarla.",
                     "No hacer ejercicio por 48 h."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.golpen
             ),
             FirstAidTopic(
                 id = "Fractura de nariz",
@@ -700,7 +701,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No hacer fuerza ni sonarse.",
                     "No acostarse si sangra."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.fracturan
             ),
             FirstAidTopic(
                 id = "Golpe en el ojo",
@@ -726,7 +727,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar gotas no indicadas.",
                     "No presionar el ojo."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.golpeojo
             ),
             FirstAidTopic(
                 id = "Cuerpo extraño en el ojo",
@@ -752,7 +753,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No frotar intensamente.",
                     "No usar algodones."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.cuerpoexojo
             ),
             FirstAidTopic(
                 id = "Cortes en párpado o contorno del ojo",
@@ -777,7 +778,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar hielo directo sobre el globo ocular.",
                     "No intentar separar los párpados si duele mucho."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.corteojo
             ),
             FirstAidTopic(
                 id = "Herida ocular grave",
@@ -805,7 +806,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No presionar o mover el objeto incrustado.",
                     "No lavar el ojo en perforaciones."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hoculargrave
             ),
             FirstAidTopic(
                 id = "Cuerpo extraño en el oído",
@@ -831,7 +832,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No usar agua si se sospecha batería o metal.",
                     "No forzar la salida con presión."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.cuerpoexoido
             ),
             FirstAidTopic(
                 id = "Cuerpo extraño en la nariz",
@@ -856,7 +857,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No empujar más adentro.",
                     "No utilizar aerosoles descongestionantes sin evaluación."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.cuerpoexnariz
             ),
             FirstAidTopic(
                 id = "Mordedura de perro",
@@ -883,7 +884,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No ignorar mordidas pequeñas (igual pueden infectar).",
                     "No cerrar la herida completamente si está muy contaminada."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.mordeduraperro
             ),
             FirstAidTopic(
                 id = "Mordedura de gato",
@@ -909,7 +910,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar crema sin limpieza previa.",
                     "No ignorar enrojecimiento creciente."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.mordeduragato
             ),
             FirstAidTopic(
                 id = "Mordedura humana",
@@ -934,7 +935,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No minimizar heridas occlusivas (con mordida completa).",
                     "No tocar con manos sucias."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.mordedurahumana
             ),
             FirstAidTopic(
                 id = "Mordedura de insecto común",
@@ -948,7 +949,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "En abeja → aguijón visible."
                 ),
                 howToAct = listOf(
-                    "Retirar aguijón raspando con tarjeta (NO pinzas).",
+                    "Retirar aguijón raspando con tarjeta si existe uno (NO pinzas).",
                     "Lavar con agua y jabón.",
                     "Aplicar frío 10 minutos.",
                     "Usar crema con hidrocortisona o antihistamínico oral si pica mucho.",
@@ -959,7 +960,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar calor.",
                     "No usar pinzas para aguijón (exprime veneno)."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.insectoc
             ),
             FirstAidTopic(
                 id = "Reacción alérgica leve por picadura",
@@ -1011,7 +1012,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No dar agua o comida.",
                     "No permitir que el paciente camine."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.alergiainsecto
             ),
             FirstAidTopic(
                 id = "Picadura de abeja (reacción localizada severa)",
@@ -1177,7 +1178,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No usar alcohol en la piel.",
                     "No retrasar la intervención médica."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.golpecalor
             ),
             FirstAidTopic(
                 id = "Insolación / golpe de sol",
@@ -1205,7 +1206,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No dejar a la persona sola.",
                     "No dar bebidas alcohólicas."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.insolacion
             ),
             FirstAidTopic(
                 id = "Hipotermia leve",
@@ -1231,7 +1232,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar calor directo (bolsas muy calientes).",
                     "No permitir que consuma alcohol."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hipotermialeve
             ),
             FirstAidTopic(
                 id = "Hipotermia moderada / grave",
@@ -1259,7 +1260,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No usar baños calientes (shock brusco).",
                     "No dar comida ni bebida."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hipotermiagrave
             ),
             FirstAidTopic(
                 id = "Congelación leve",
@@ -1284,7 +1285,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No usar fuego o calor directo.",
                     "No romper ampollas."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.congelamientoleve
             ),
             FirstAidTopic(
                 id = "Congelación severa",
@@ -1309,7 +1310,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No recalentar si no hay ambiente seguro.",
                     "No usar agua caliente."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.congelamientograve
             ),
             FirstAidTopic(
                 id = "Convulsión",
@@ -1337,7 +1338,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No dar agua o comida.",
                     "No realizar RCP durante la convulsión (solo después si no respira)."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.convulsion
             ),
             FirstAidTopic(
                 id = "Ataque de asma",
@@ -1366,7 +1367,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No administrar medicamentos ajenos.",
                     "No permitir que camine o hable demasiado."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.asma
             ),
             FirstAidTopic(
                 id = "Dificultad respiratoria no conocida",
@@ -1393,7 +1394,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No acostar completamente.",
                     "No dejar sola a la persona."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.respidesconocida
             ),
             FirstAidTopic(
                 id = "Hiperventilación",
@@ -1421,7 +1422,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No minimizar síntomas (“es psicológico”).",
                     "No dejar a la persona sola."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hiperventilacion
             ),
             FirstAidTopic(
                 id = "Paro cardiorrespiratorio",
@@ -1443,7 +1444,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "Solo compresiones si no estás entrenado.",
                     "Cadencia: 100–120/min.",
                     "Profundidad 5–6 cm.",
-                    "Usar DEA si está disponible (seguir instrucciones de voz).",
+                    "Usar DEA si está disponible (seguir instrucciones).",
                     "No detener RCP hasta que llegue ayuda."
                 ),
                 whatNotToDo = listOf(
@@ -1451,7 +1452,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No parar compresiones más de 10 segundos.",
                     "No mover a la persona innecesariamente."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.cardiorrespiratorio
             ),
             FirstAidTopic(
                 id = "Dolor torácico (posible infarto)",
@@ -1481,7 +1482,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No ignorar dolor que dura >10 min.",
                     "No administrar medicamentos desconocidos."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.dolortoracico
             ),
             FirstAidTopic(
                 id = "Accidente cerebrovascular (ACV)",
@@ -1489,7 +1490,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                 category = "Emergencias Graves",
                 imageVector = Icons.Default.Face,
                 symptoms = listOf(
-                    "Método FAST: Face (caída de un lado de la cara), Arm (debilidad en un brazo), Speech (dificultad para hablar), Time (tiempo = emergencia).",
+                    "Método para detectar FAST: Face (caída de un lado de la cara), Arm (debilidad en un brazo), Speech (dificultad para hablar), Time (tiempo = emergencia).",
                     "Otros: Dolor de cabeza intenso, confusión, problemas visuales, pérdida de equilibrio."
                 ),
                 howToAct = listOf(
@@ -1505,7 +1506,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No dejar sola a la persona.",
                     "No permitir caminar ni forzar habla."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.avc
             ),
             FirstAidTopic(
                 id = "Crisis hipertensiva",
@@ -1534,7 +1535,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No recostar completamente.",
                     "No permitir esfuerzo físico."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.crisishiper
             ),
             FirstAidTopic(
                 id = "Hipoglucemia",
@@ -1562,7 +1563,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No retrasar ingesta de azúcar si hay síntomas claros.",
                     "No confundir con hiperglucemia antes de tratar."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.hipoglucemia
             ),
             FirstAidTopic(
                 id = "Picadura de tábano",
@@ -1615,7 +1616,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No meter dedos si no se ve el objeto.",
                     "No permitir que la persona camine o corra."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.atragantamiento
             ),
             FirstAidTopic(
                 id = "Asfixia por inmersión (ahogamiento)",
@@ -1672,7 +1673,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No aplicar hielo directamente en quemaduras.",
                     "No ignorar síntomas leves."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.electrocucion
             ),
             FirstAidTopic(
                 id = "Intoxicación por alimentos",
@@ -1700,7 +1701,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No consumir lácteos o frituras.",
                     "No dejar de hidratar aunque vomite (sorbitos)."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.intoxalim
             ),
             FirstAidTopic(
                 id = "Intoxicación por medicamentos",
@@ -1723,7 +1724,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No dar leche ni comida.",
                     "No retrasar consulta."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.intoxmedi
             ),
             FirstAidTopic(
                 id = "Inhalación de humo",
@@ -1752,7 +1753,7 @@ class FirstAidRepositoryImpl : FirstAidRepository {
                     "No ignorar síntomas respiratorios persistentes.",
                     "No fumar después del episodio."
                 ),
-                procedureImage = null
+                procedureImage = R.drawable.humo
             )
         ).sortedBy { it.category }.sortedBy { it.title }
     }

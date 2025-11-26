@@ -1,4 +1,4 @@
-package com.example.myapplication.ui
+package com.example.wikiaid.ui
 
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
@@ -33,7 +33,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.example.myapplication.data.FirstAidTopic
+import com.example.wikiaid.data.FirstAidTopic
 
 @Composable
 fun TopicDetailScreen(topic: FirstAidTopic, viewModel: FirstAidViewModel) {

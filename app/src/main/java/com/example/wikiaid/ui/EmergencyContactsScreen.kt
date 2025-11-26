@@ -1,4 +1,4 @@
-package com.example.myapplication.ui
+package com.example.wikiaid.ui
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth

@@ -1,10 +1,10 @@
-package com.example.myapplication.ui
+package com.example.wikiaid.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myapplication.data.FirstAidRepository
-import com.example.myapplication.data.FirstAidTopic
-import com.example.myapplication.data.FavoritesRepository
+import com.example.wikiaid.data.FirstAidRepository
+import com.example.wikiaid.data.FirstAidTopic
+import com.example.wikiaid.data.FavoritesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

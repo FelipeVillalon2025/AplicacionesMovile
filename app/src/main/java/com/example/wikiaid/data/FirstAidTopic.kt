@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.wikiaid.data
 
 import androidx.annotation.DrawableRes
 import androidx.compose.ui.graphics.vector.ImageVector

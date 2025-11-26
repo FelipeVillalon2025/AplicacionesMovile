@@ -1,4 +1,4 @@
-package com.example.myapplication.data
+package com.example.wikiaid.data
 
 import android.content.Context
 import androidx.datastore.core.DataStore
